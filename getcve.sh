@@ -20,10 +20,11 @@ package="${POSITIONAL_ARGS[0]}"
 current_version=""
 candidate_version=""
 
+echo "${package}"
 
 function get_current_version
 {
-	current_version=`apt-cache policy "${package}" | grep "Installed"`
+	current_version="`apt-cache policy ${package} | grep 'Installed'`"
 }
 
 function get_candidate_version
