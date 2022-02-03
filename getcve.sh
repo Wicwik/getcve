@@ -32,6 +32,6 @@ function get_candidate_version
 
 }
 
-echo current_version
-echo candidate_version
+echo "${current_version}"
+echo "${candidate_version}"
 
