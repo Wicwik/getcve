@@ -28,7 +28,7 @@ function get_version
 {
 	version=`apt-cache policy "${package}" | grep "${release}" | cut -d' ' -f4`
 
-	local websupport_str="ws1"
+	local websupport_str="-ws1"
 	if [[ "${version}" == *"${websupport_str}" ]]; then
 		echo "Theee"
   		new_ver="${version%${websupport_str}*}"
