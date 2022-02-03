@@ -23,12 +23,12 @@ candidate_version=""
 
 function get_current_version
 {
-	current_version=${apt-cache policy "${package}" | grep "Installed"}
+	current_version=$(apt-cache policy "${package}" | grep "Installed")
 }
 
 function get_candidate_version
 {
-	candidate_version=${apt-cache policy "${package}" | grep "Candidate"}
+	candidate_version=$(apt-cache policy "${package}" | grep "Candidate")
 
 }
 
