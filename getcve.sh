@@ -65,5 +65,5 @@ do
 	patches_n=$((patches_n+`grep "patches/${cve}" <<< "${relevant_chagelog}" | wc -l`))
 done
 
-echo "${patches_n}"
+echo "Number of CVE patches: ${patches_n}"
 
