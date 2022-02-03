@@ -49,8 +49,10 @@ full_changelog=`apt-get changelog "${package}=${candidate_version}"`
 relevant_chagelog="${full_changelog%${current_version}*}"
 
 # echo "${full_changelog}"
-echo "${relevant_chagelog}"
+# echo "${relevant_chagelog}"
 
 cves=`echo "${relevant_chagelog}" | grep '\- CVE' | cut -d' ' -f6`
 echo "${cves}"
+
+cves_n=`wc -l <<< "${cves}"`
 
