@@ -52,11 +52,15 @@ relevant_chagelog="${full_changelog%${current_version}*}"
 # echo "${relevant_chagelog}"
 
 cves=`grep '\- CVE' <<< "${relevant_chagelog}" | cut -d' ' -f6`
-echo "${cves}"
+# echo "${cves}"
 
 cves_n=`wc -l <<< "${cves}"`
-echo "${cves_n}"
+echo "Number of different CVE: ${cves_n}"
 
-readarray -t y <<<"${cves}"
-echo "${y[2]}"
+readarray -t cve_arr <<<"${cves}"
+
+for cve in "${cve_arr[@]}"
+do
+	grep "patches/${cve}" <<< "${relevant_chagelog}"
+done
 
