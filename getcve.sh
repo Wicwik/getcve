@@ -30,9 +30,7 @@ function get_version
 
 	local websupport_str="-ws1"
 	if [[ "${version}" == *"${websupport_str}" ]]; then
-		echo "Theee"
-  		new_ver="${version%${websupport_str}*}"
-  		version="${new_ver}"
+  		version="${version%${websupport_str}*}"
 	fi
 }
 
@@ -44,6 +42,6 @@ release="Candidate"
 get_version
 candidate_version="${version}"
 
-echo "${current_version}"
-echo "${candidate_version}"
+echo "Current version: ${current_version}"
+echo "Candidate version: ${candidate_version}"
 
