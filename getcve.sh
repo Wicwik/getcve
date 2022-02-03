@@ -29,7 +29,7 @@ function get_version
 	version=`apt-cache policy "${package}" | grep "${release}" | cut -d' ' -f4`
 
 	local websupport_str="ws1"
-	if [[ "${version}" == *"${websupport_str}" ]]; then
+	if [[ "${version}" == *"${websupport_str}"* ]]; then
   		version=${version%websupport_str*}
 	fi
 }
