@@ -58,5 +58,5 @@ cves_n=`wc -l <<< "${cves}"`
 echo "${cves_n}"
 
 readarray -t y <<<"${cves}"
-echo "${y}"
+echo "${y[2]}"
 
