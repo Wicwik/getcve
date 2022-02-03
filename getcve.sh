@@ -55,4 +55,5 @@ cves=`echo "${relevant_chagelog}" | grep '\- CVE' | cut -d' ' -f6`
 echo "${cves}"
 
 cves_n=`wc -l <<< "${cves}"`
+echo "${cves_n}"
 
