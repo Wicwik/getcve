@@ -62,7 +62,7 @@ readarray -t cve_arr <<<"${cves}"
 patches_n=0
 for cve in "${cve_arr[@]}"
 do
-	patches_n+=$(`grep "patches/${cve}" <<< "${relevant_chagelog}" | wc -l` + 0)
+	patches_n=`grep "patches/${cve}" <<< "${relevant_chagelog}" | wc -l`
 done
 
 echo "${patches_n}"
