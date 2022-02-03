@@ -46,7 +46,7 @@ echo "Current version: ${current_version}"
 echo "Candidate version: ${candidate_version}"
 
 full_changelog=`apt-get changelog "${package}=${candidate_version}"`
-relevant_chagelog="${MYVAR%${current_version}*}"
+relevant_chagelog="${full_changelog%${current_version}*}"
 
 echo "${full_changelog}"
 echo "${relevant_chagelog}"
