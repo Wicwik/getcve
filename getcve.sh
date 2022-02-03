@@ -48,6 +48,7 @@ echo "Candidate version: ${candidate_version}"
 full_changelog=`apt-get changelog "${package}=${candidate_version}"`
 relevant_chagelog="${MYVAR%${current_version}*}"
 
+echo "${full_changelog}"
 echo "${relevant_chagelog}"
 
 
