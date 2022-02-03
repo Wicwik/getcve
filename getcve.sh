@@ -19,22 +19,23 @@ done
 package="${POSITIONAL_ARGS[0]}"
 current_version=""
 candidate_version=""
+release=""
+version=""
 
 echo "${package}"
 
-function get_current_version
+function get_version
 {
-	current_version="`apt-cache policy ${package} | grep 'Installed'`"
+	version=`apt-cache policy "${package}" | grep "${release}" | cut -d' ' -f4`
 }
 
-function get_candidate_version
-{
-	candidate_version=`apt-cache policy "${package}" | grep "Candidate"`
+release="Installed"
+get_version
+current_version="${version}"
 
-}
-
-get_current_version
-get_candidate_version
+release="Candidate"
+get_version
+candidate_version="${version}"
 
 echo "${current_version}"
 echo "${candidate_version}"
