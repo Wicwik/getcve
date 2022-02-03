@@ -31,7 +31,7 @@ function get_version
 	local websupport_str="ws1"
 	if [[ "${version}" == *"${websupport_str}" ]]; then
 		echo "Theee"
-  		new_ver="${version%websupport_str*}"
+  		new_ver="${version%${websupport_str}*}"
   		version="${new_ver}"
 	fi
 }
