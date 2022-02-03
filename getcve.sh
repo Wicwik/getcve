@@ -51,6 +51,6 @@ relevant_chagelog="${full_changelog%${current_version}*}"
 # echo "${full_changelog}"
 echo "${relevant_chagelog}"
 
-cves=`grep '\- CVE' "${relevant_chagelog}" | cut -d' ' -f6`
+cves=`echo "${relevant_chagelog}" | grep '\- CVE' | cut -d' ' -f6`
 echo "${cves}"
 
